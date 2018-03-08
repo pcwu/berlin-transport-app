@@ -24,7 +24,7 @@ class Departures extends React.Component {
 
   getData() {
     const { station, lines, directions } = this.props;
-    fetch(`https://vbb.transport.rest/stations/${station}/departures`)
+    fetch(`https://2.vbb.transport.rest/stations/${station}/departures`)
       .then(res => res.json())
       .then(data => data.filter(d => !lines || lines.includes(d.line.id)))
       .then(data => data.filter(d => !directions || directions.includes(d.direction)))
